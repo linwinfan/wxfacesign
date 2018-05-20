@@ -1,0 +1,16 @@
+<view class="page"  wx:if="{{!loading}}">
+	<view class='startAnswer' bindtap='chose' wx:if="{{plansignId!=''}}">
+    刷脸签到
+  </view>
+	<camera id='myCamera' device-position="front" flash="auto" binderror="error" style="width: 100%; height:80%;"></camera>	
+</view>
+
+   <view class="loading_box" wx:if="{{loading}}">
+      <view class="loading3 loading3_1"></view>
+      <view class="loading3 loading3_2"></view>
+      <view class="loading3 loading3_3"></view>
+    </view>  
+
+
+		
+

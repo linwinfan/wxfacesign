@@ -1,0 +1,35 @@
+<view class="page">
+  <view style='text-align: center;justify-content:center;display:flex;align-items:center;margin:40rpx 0rpx 70rpx 0rpx;'>
+    <image class='image' src='../../images/8-01.png'></image>
+  </view>
+    <form bindsubmit="createSignSuccess">
+			<view class='text'>签到名称</view>
+      <view class="inputFrame">
+        <input placeholder="签到名称" name="signName" placeholder-style='font-size:35rpx;' value="{{signName}}"/>
+      </view>
+      <view class='text'>签到日期</view>
+      <picker mode="date" value="{{date}}" start="2018-05-01" end="2020-09-01" bindchange="bindDateChange">
+          <view  class='inputFrame' >
+            {{signDate}}
+          </view>
+      </picker>
+      <view class='text'>开始时间</view>
+      <picker mode="time" value="{{starttime}}" start="06:00" end="24:00" bindchange="bindStartTimeChange">
+          <view  class='inputFrame' >
+            {{starttime}}
+          </view>
+      </picker>
+			<view class='text'>结束时间</view>
+			<picker mode="time" value="{{endtime}}" start="06:00" end="24:00" bindchange="bindEndTimeChange">
+					<view  class='inputFrame' >
+						{{endtime}}
+					</view>
+			</picker>
+      
+      
+
+      <button class='ensure'  formType="submit" >确定</button>
+
+    </form>
+		
+</view>

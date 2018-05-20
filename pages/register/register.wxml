@@ -1,0 +1,39 @@
+<view class="page">
+  <view style='text-align: center;justify-content:center;display:flex;align-items:center;margin:40rpx 0rpx 70rpx 0rpx;'>
+    <image class='image' src='../../images/8-01.png'></image>
+  </view>
+    <form bindsubmit="registerSuccess">
+      <view class='text'>请选择您的学校</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{Xuexiaos}}">
+          <view  class='inputFrame' >
+            {{choseXuexiao}}
+          </view>
+      </picker>
+      <view class='text'>请选择您的院系</view>
+      <picker bindchange="bindYXPickerChange" value="{{yxindex}}" range="{{Xueyuans}}">
+          <view  class='inputFrame' >
+            {{choseYX}}
+          </view>
+      </picker>
+      <view class='text'>请选择您的班级</view>
+      <picker bindchange="bindBJPickerChange" value="{{bjindex}}" range="{{Classes}}">
+          <view  class='inputFrame' >
+            {{choseBJ}}
+          </view>
+      </picker>
+      <view class='text'>请选择您的学号与姓名</view>
+      <picker bindchange="bindStudentPickerChange" value="{{studentindex}}" range="{{Students}}">
+          <view  class='inputFrame' >
+            {{choseStudent}}
+          </view>
+      </picker>
+      <view class='text'>输入您的手机号</view>
+      <view class="inputFrame">
+        <input  type="number" placeholder="手机号" name="telephone" placeholder-style='font-size:35rpx;'/>
+      </view>
+
+      <button class='ensure'  formType="submit" >确定</button>
+
+      <view class='tip'>一经确认不可修改</view>
+    </form>
+</view>

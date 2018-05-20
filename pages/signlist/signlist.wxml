@@ -1,0 +1,25 @@
+
+
+		<view class='startAnswer' bindtap='createSign' >
+			新建签到
+		</view> 
+		<view class="no-order" hidden="{{currentList.length>0}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">暂无记录</view>
+    </view>
+    <view class="order-list" hidden="{{currentList.length==0}}">
+        <view class="a-order" wx:for-items="{{currentList}}" wx:key="{{index}}">
+            
+            <view class="goods-info" data-id="{{item.id}}">
+                <view class="goods-des">
+                   <view><text style="font-weight:bold;color:green;">签到名称：</text>{{item.signName}} </view>
+                   <view><text style="font-weight:bold;color:green;">应签日期：</text>{{item.signDate}}</view>
+									 <view><text style="font-weight:bold;color:green;">开始时间：</text>{{item.starttime}}</view>
+									 <view><text style="font-weight:bold;color:green;">结束时间：</text>{{item.endtime}}</view>
+									 <button data-id="{{item.objectId}}" class='ensure' bindtap='delPlansign'>删除</button>
+                </view>
+            </view>
+             
+        </view>
+
+    </view>

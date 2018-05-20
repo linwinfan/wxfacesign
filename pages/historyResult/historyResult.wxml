@@ -1,0 +1,32 @@
+
+<view class="status-box">
+        <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+            {{item}}
+            <view class="{{tabClass[index]}}"></view>
+        </view>
+    </view>
+		<view class="no-order" hidden="{{currentList.length>0}}">
+        <image src="/images/no-order.png" class="no-order-img"></image>
+        <view class="text">暂无记录</view>
+    </view>
+    <view class="order-list" hidden="{{currentList.length==0}}">
+        <view class="a-order" wx:for-items="{{currentList}}" wx:key="{{index}}">
+            
+            <view class="goods-info" bindtap="orderDetail" data-id="{{item.id}}">
+                <view class="goods-des">
+                   <view><text style="font-weight:bold;color:green;">签到名称：</text>{{item.signName}} </view>
+                   <view wx:if="{{item.dist}}"><text style="font-weight:bold;color:green;">签到时间：</text>{{item.createdAt}}</view>
+									 <view  wx:if="{{!item.dist}}"><text style="font-weight:bold;color:green;">应签日期：</text>{{item.signDate}}</view>
+									 <view  wx:if="{{!item.dist}}"><text style="font-weight:bold;color:green;">开始时间：</text>{{item.starttime}}</view>
+									 <view  wx:if="{{!item.dist}}"><text style="font-weight:bold;color:green;">结束时间：</text>{{item.endtime}}</view>
+                </view>
+            </view>
+            <view >
+                <view class="img-box" wx:if="{{item.dist}}">
+                    <image src="{{item.imgUrl}}" class="goods-img"></image>
+                </view>
+            </view>
+             
+        </view>
+
+    </view>
